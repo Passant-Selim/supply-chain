@@ -50,19 +50,13 @@ const userSchema = new mongoose.Schema(
     company: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Company",
+      default: null,
     },
 
-    roles: {
-      type: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Role",
-        },
-      ],
-      validate: {
-        validator: (roles) => roles.length > 0,
-        message: "At least one role is required",
-      },
+    role: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Role",
+      required: [true, "Role is required"],
     },
 
     status: {

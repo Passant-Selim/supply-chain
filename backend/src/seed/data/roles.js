@@ -10,6 +10,14 @@ module.exports = [
       "ACTIVATE_COMPANY",
       "DEACTIVATE_COMPANY",
 
+      "CREATE_USER",
+      "VIEW_USER",
+      "UPDATE_USER",
+      "ACTIVATE_USER",
+      "DEACTIVATE_USER",
+      "RESET_USER_PASSWORD",
+      "ASSIGN_USER_ROLE",
+
       "VIEW_REPORTS",
       "EXPORT_REPORTS",
     ],

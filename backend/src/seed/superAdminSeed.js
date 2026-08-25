@@ -1,5 +1,3 @@
-const bcrypt = require("bcrypt");
-
 const User = require("../modules/user/userModel");
 const Role = require("../modules/role/roleModel");
 
@@ -31,15 +29,12 @@ const seedSuperAdmin = async () => {
     throw new Error("SUPER_ADMIN role not found. Please run Roles Seed first.");
   }
 
-  // Hash password
-  const hashedPassword = await bcrypt.hash(superAdmin.password, 10);
-
   // Create Super Admin
   await User.create({
     firstName: superAdmin.firstName,
     lastName: superAdmin.lastName,
     email: superAdmin.email,
-    password: hashedPassword,
+    password: superAdmin.password,
     phone: superAdmin.phone,
     role: superAdminRole._id,
   });

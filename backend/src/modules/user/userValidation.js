@@ -27,10 +27,7 @@ const createUserValidation = Joi.object({
 
   company: objectId.required(),
 
-  roles: Joi.array()
-    .items(objectId)
-    .min(1)
-    .required(),
+  role: objectId.required(),
 });
 
 const updateUserValidation = Joi.object({
@@ -49,19 +46,19 @@ const updateUserValidation = Joi.object({
   phone: phone,
 
   company: objectId,
-
-  roles: Joi.array()
-    .items(objectId)
-    .min(1),
 }).min(1);
 
-const loginValidation = Joi.object({
-  email: email.required(),
-  password: Joi.string().required(),
+const resetPasswordValidation = Joi.object({
+  password: password.required(),
+});
+
+const assignRoleValidation = Joi.object({
+  role: objectId.required(),
 });
 
 module.exports = {
   createUserValidation,
   updateUserValidation,
-  loginValidation,
+  resetPasswordValidation,
+  assignRoleValidation,
 };

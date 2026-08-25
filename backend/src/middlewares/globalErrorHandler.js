@@ -69,7 +69,7 @@ const globalErrorHandler = (error, req, res, next) => {
         if (err.name === "CastError") err = handleCastErrorDB(err);
         if (err.code === 11000) err = handleDuplicateFieldsDB(err);
         if (err.name === "ValidationError") err = handleValidationErrorDB(err);
-        if (err.name === "JsonWenTokenError") err = handleJWTError();
+        if (err.name === "JsonWebTokenError") err = handleJWTError();
         if (err.name === "TokenExpiredError") err = handleJWTExpiredError();
 
         sendErrorProd(err, res);

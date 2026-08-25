@@ -14,7 +14,7 @@ const password = Joi.string()
 const phone = Joi.string()
   .trim()
   .pattern(/^01[0125][0-9]{8}$/)
-  .messages("Please enter a valid phone number");
+  .messages({ "string.pattern.base": "Please enter a valid phone number" });
 
 const status = Joi.string().valid("active", "inactive");
 

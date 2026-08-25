@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+require("../permission/permissionModel");
 
 const roleSchema = new mongoose.Schema(
   {

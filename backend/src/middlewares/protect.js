@@ -23,7 +23,7 @@ const protect = catchAsync(async (req, res, next) => {
 
     const currentUser = await User.findById(decoded.id).populate({
         path: "role",
-        populate: { path: "permessions" },
+        populate: { path: "permissions" },
     });
 
     if (!currentUser) {
